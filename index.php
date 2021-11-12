@@ -5,41 +5,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRUD PHP - Lucas</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <title>CRUD PHP</title>
 </head>
 
 <body>
-    <section class="hero is-success is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-4 is-offset-4">
-                    <h3 class="title has-text-grey">Login</h3>               
-                    <?php
-                        if (isset($_SESSION['falha_aut'])) {
-                            echo '<div class="notification is-danger"><p>ERRO: Usuário ou senha inválidos.</p></div>';
-                        }
-                    ?>          
-                    <div class="box">
-                        <form action="login.php" method="POST">
-                            <div class="field">
-                                <div class="control">
-                                    <input name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <div class="control">
-                                    <input name="senha" class="input is-large" type="password" placeholder="Sua senha">
-                                </div>
-                            </div>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
-                        </form>
-                    </div>
+    <h3>Login</h3>               
+    <?php
+        if (isset($_SESSION['falha_aut'])) {
+            echo '<div class="notification is-danger"><p>ERRO: Usuário ou senha inválidos.</p></div>';
+        }
+    ?>          
+    <div class="box">
+        <form action="conn/login.php" method="POST">
+            <div class="field">
+                <div class="control">
+                    <input name="usuario" name="text" placeholder="Seu usuário">
                 </div>
             </div>
-        </div>
-    </section>
+
+            <div class="field">
+                <div class="control">
+                    <input name="senha" type="password" placeholder="Sua senha">
+                </div>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
 </body>
 
 </html>
